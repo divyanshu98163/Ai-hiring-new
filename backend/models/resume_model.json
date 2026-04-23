@@ -1,0 +1,33 @@
+{
+  "accuracy": 0.9844559585492227,
+  "kaggle_source": "https://www.kaggle.com/datasets/jillanisofttech/updated-resume-dataset",
+  "mirror_source": "https://huggingface.co/datasets/brackozi/Resume/raw/main/UpdatedResumeDataSet.csv",
+  "labels": [
+    "Advocate",
+    "Arts",
+    "Automation Testing",
+    "Blockchain",
+    "Business Analyst",
+    "Civil Engineer",
+    "Data Science",
+    "Database",
+    "DevOps Engineer",
+    "DotNet Developer",
+    "ETL Developer",
+    "Electrical Engineering",
+    "HR",
+    "Hadoop",
+    "Health and fitness",
+    "Java Developer",
+    "Mechanical Engineer",
+    "Network Security Engineer",
+    "Operations Manager",
+    "PMO",
+    "Python Developer",
+    "SAP Developer",
+    "Sales",
+    "Testing",
+    "Web Designing"
+  ],
+  "record_count": 962
+}
