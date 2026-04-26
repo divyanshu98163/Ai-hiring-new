@@ -1,3 +1,5 @@
 backend/.env
 backend/__pycache__/
 *.pyc
+*.log
+backend/data/compatibility_store.json
