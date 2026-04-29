@@ -1,10 +1,21 @@
 services:
   - type: web
     name: ai-hiring-backend
-    env: python
+    runtime: python
+    autoDeployTrigger: checksPass
+    healthCheckPath: /health
     rootDir: backend
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    buildFilter:
+      paths:
+        - backend/**
+        - main.py
+        - requirements.txt
+        - .python-version
+        - backend/.python-version
+        - render.yaml
+        - .github/workflows/backend-ci.yml
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0
