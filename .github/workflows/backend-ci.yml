@@ -11,6 +11,7 @@ on:
       - "requirements.txt"
       - ".python-version"
       - "backend/.python-version"
+      - "render.yaml"
       - "railway.json"
       - ".github/workflows/backend-ci.yml"
   pull_request:
@@ -20,6 +21,7 @@ on:
       - "requirements.txt"
       - ".python-version"
       - "backend/.python-version"
+      - "render.yaml"
       - "railway.json"
       - ".github/workflows/backend-ci.yml"
 
