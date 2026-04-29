@@ -1,0 +1,51 @@
+name: Backend CI
+
+on:
+  push:
+    branches:
+      - main
+      - "codex/**"
+    paths:
+      - "backend/**"
+      - "main.py"
+      - "requirements.txt"
+      - ".python-version"
+      - "backend/.python-version"
+      - "railway.json"
+      - ".github/workflows/backend-ci.yml"
+  pull_request:
+    paths:
+      - "backend/**"
+      - "main.py"
+      - "requirements.txt"
+      - ".python-version"
+      - "backend/.python-version"
+      - "railway.json"
+      - ".github/workflows/backend-ci.yml"
+
+jobs:
+  backend-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install backend dependencies
+        run: pip install -r requirements.txt
+
+      - name: Compile backend entrypoints
+        run: python -m py_compile backend/main.py main.py
+
+      - name: Verify FastAPI app imports
+        run: |
+          python - <<'PY'
+          import main
+          assert getattr(main, "app", None) is not None
+          print(main.app.title)
+          PY
